@@ -1,24 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_app/gradient_controller.dart';
+import 'package:quizz_app/quiz.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Quiz());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: GradientContainer(
-          [
-            Color.fromARGB(255, 120, 15, 129),
-            Color.fromARGB(255, 23, 78, 104),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(context) {
+//     return const Quiz();
+//   }
+// }
