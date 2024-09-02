@@ -4,7 +4,7 @@ import 'package:quizz_app/styled_text.dart';
 class StartQuiz extends StatelessWidget {
   const StartQuiz(this.startQuiz, {super.key});
 
-  final void Function() startQuiz;
+  final void Function(dynamic) startQuiz;
 
   @override
   Widget build(context) {
@@ -36,7 +36,9 @@ class StartQuiz extends StatelessWidget {
             height: 30,
           ),
           OutlinedButton.icon(
-            onPressed: startQuiz,
+            onPressed: () {
+              startQuiz('questions');
+            },
             icon: const Icon(
               Icons.arrow_right_alt,
               color: Color.fromARGB(255, 211, 209, 209),
