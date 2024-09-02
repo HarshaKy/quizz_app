@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_app/styled_text.dart';
+import 'package:quizz_app/answer_button.dart';
+import 'package:quizz_app/data/quiz_questions.dart';
 
 class Questions extends StatefulWidget {
   const Questions(this.homeScreen, {super.key});
@@ -13,31 +14,32 @@ class Questions extends StatefulWidget {
 class _QuestionsState extends State<Questions> {
   @override
   Widget build(context) {
-    return Center(
+    final currentQuestion = questions[0];
+
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const StyledText(
-            'Questions Screen',
-            30,
-            Color.fromARGB(255, 211, 209, 209),
+          Text(
+            currentQuestion.question,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 17,
+            ),
           ),
           const SizedBox(
             height: 30,
           ),
-          OutlinedButton.icon(
-            onPressed: () {
-              widget.homeScreen('start_quiz');
+          ...currentQuestion.answers.map(
+            (answer) {
+              return AnswerButton(
+                answerText: answer,
+                onTap: () {},
+              );
             },
-            icon: const Icon(
-              Icons.home,
-              color: Color.fromARGB(255, 211, 209, 209),
-            ),
-            label: const StyledText(
-              'Home',
-              14,
-              Color.fromARGB(255, 211, 209, 209),
-            ),
           ),
         ],
       ),

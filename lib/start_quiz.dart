@@ -40,7 +40,7 @@ class StartQuiz extends StatelessWidget {
               startQuiz('questions');
             },
             icon: const Icon(
-              Icons.arrow_right_alt,
+              Icons.play_arrow_rounded,
               color: Color.fromARGB(255, 211, 209, 209),
             ),
             label: const StyledText(
