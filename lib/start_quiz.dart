@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:quizz_app/styled_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartQuiz extends StatelessWidget {
   const StartQuiz(this.startQuiz, {super.key});
 
-  final void Function(dynamic) startQuiz;
+  final void Function(String) startQuiz;
 
   @override
   Widget build(context) {
@@ -27,10 +27,12 @@ class StartQuiz extends StatelessWidget {
           const SizedBox(
             height: 80,
           ),
-          const StyledText(
-            'Welcome to the quiz!',
-            30,
-            Color.fromARGB(255, 211, 209, 209),
+          Text(
+            'Welcome to the Quiz!',
+            style: GoogleFonts.lato(
+              color: Colors.white,
+              fontSize: 30,
+            ),
           ),
           const SizedBox(
             height: 30,
@@ -43,10 +45,12 @@ class StartQuiz extends StatelessWidget {
               Icons.play_arrow_rounded,
               color: Color.fromARGB(255, 211, 209, 209),
             ),
-            label: const StyledText(
+            label: Text(
               'Start Quiz',
-              14,
-              Color.fromARGB(255, 211, 209, 209),
+              style: GoogleFonts.lato(
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
           ),
         ],
