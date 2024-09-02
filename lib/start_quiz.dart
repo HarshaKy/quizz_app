@@ -9,22 +9,40 @@ class StartQuiz extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        // Opacity(
+        //   opacity: 0.8,
+        //   child: Image.asset(
+        //     'assets/images/quiz-logo.png',
+        //     width: 300,
+        //   ),
+        // ),
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 300,
+          color: const Color.fromARGB(185, 211, 209, 209),
         ),
         const SizedBox(
-          height: 40,
+          height: 80,
         ),
         const StyledText(
           'Welcome to the quiz!',
+          30,
+          Color.fromARGB(255, 211, 209, 209),
         ),
         const SizedBox(
-          height: 20,
+          height: 30,
         ),
-        OutlinedButton(
+        OutlinedButton.icon(
           onPressed: () {},
-          child: const Text('Start Quiz'),
+          icon: const Icon(
+            Icons.arrow_right_alt,
+            color: Color.fromARGB(255, 211, 209, 209),
+          ),
+          label: const StyledText(
+            'Start Quiz',
+            14,
+            Color.fromARGB(255, 211, 209, 209),
+          ),
         ),
       ],
     );

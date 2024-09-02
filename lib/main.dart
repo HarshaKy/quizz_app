@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: GradientContainer(
           [
-            Color.fromARGB(255, 228, 139, 236),
-            Color.fromARGB(255, 206, 144, 144),
+            Color.fromARGB(255, 120, 15, 129),
+            Color.fromARGB(255, 23, 78, 104),
           ],
         ),
       ),
