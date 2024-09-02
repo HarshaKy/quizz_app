@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizz_app/questions.dart';
 import 'package:quizz_app/start_quiz.dart';
+import 'package:quizz_app/data/quiz_questions.dart';
 
 const beginAlignment = Alignment.bottomRight;
 const endAlignment = Alignment.topLeft;
@@ -24,6 +25,15 @@ class _QuizState extends State<Quiz> {
 
   void addAnswer(String answer) {
     selectedAnswers.add(answer);
+
+    if (selectedAnswers.length == questions.length) {
+      setState(
+        () {
+          activeScreen = 'start_quiz';
+          selectedAnswers.clear();
+        },
+      );
+    }
   }
 
   @override
